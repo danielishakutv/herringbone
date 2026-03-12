@@ -5,6 +5,7 @@ import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 import SectionBackground from "@/components/SectionBackground";
 import ScrollReveal from "@/components/ScrollReveal";
+import TiltImage from "@/components/TiltImage";
 import { products } from "@/lib/products";
 import { bgImages } from "@/lib/images";
 
@@ -103,14 +104,11 @@ export default function HomePage() {
               </div>
             </div>
             <div className="hidden lg:block relative">
-              <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=800&q=75&auto=format"
-                  alt="Nigerian agricultural commodities"
-                  fill
-                  className="object-cover"
-                  sizes="50vw"
-                />
+              <TiltImage
+                src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=800&q=75&auto=format"
+                alt="Nigerian agricultural commodities"
+                sizes="50vw"
+              >
                 <div className="absolute inset-0 bg-gradient-to-t from-forest/60 via-forest/20 to-transparent" />
                 <div className="absolute inset-0 flex items-end justify-start p-8">
                   <Image
@@ -121,7 +119,7 @@ export default function HomePage() {
                     className="opacity-90"
                   />
                 </div>
-              </div>
+              </TiltImage>
             </div>
           </div>
 
