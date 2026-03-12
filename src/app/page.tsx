@@ -73,7 +73,7 @@ export default function HomePage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-gold/10 text-gold border border-gold/20 mb-6">
+              <span className="badge-glow inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-gold/10 text-gold border border-gold/20 mb-6">
                 NEPC Certified Exporter
               </span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
