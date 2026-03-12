@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import { bgImages } from "@/lib/images";
 
 interface CTASectionProps {
   title?: string;
@@ -15,15 +17,22 @@ export default function CTASection({
   buttonHref = "/contact",
   variant = "forest",
 }: CTASectionProps) {
-  const bgClass =
-    variant === "forest"
-      ? "bg-forest text-white"
-      : "gold-gradient text-forest";
-
   return (
-    <section className={`${bgClass} py-20`}>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold">{title}</h2>
+    <section className="relative py-20 overflow-hidden">
+      <Image
+        src={bgImages.cta}
+        alt=""
+        fill
+        className="object-cover"
+        sizes="100vw"
+      />
+      <div className={`absolute inset-0 ${
+        variant === "forest"
+          ? "bg-forest/90"
+          : "bg-gradient-to-r from-[#C6A45C]/90 to-[#d4b76d]/90"
+      }`} />
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className={`text-3xl sm:text-4xl font-bold ${variant === "forest" ? "text-white" : "text-forest"}`}>{title}</h2>
         <p
           className={`mt-4 text-lg leading-relaxed ${
             variant === "forest" ? "text-gray-300" : "text-forest/80"

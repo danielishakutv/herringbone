@@ -3,7 +3,9 @@ import Image from "next/image";
 import ProductCard from "@/components/ProductCard";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
+import SectionBackground from "@/components/SectionBackground";
 import { products } from "@/lib/products";
+import { bgImages } from "@/lib/images";
 
 const services = [
   {
@@ -56,10 +58,17 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center bg-forest overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(198,164,92,0.15),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(198,164,92,0.1),transparent_50%)]" />
-        </div>
+        <Image
+          src={bgImages.homeHero}
+          alt="International shipping port"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+          quality={80}
+        />
+        <div className="absolute inset-0 bg-forest/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-forest/90 via-forest/60 to-transparent" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -94,14 +103,21 @@ export default function HomePage() {
             </div>
             <div className="hidden lg:block relative">
               <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-gold/20 to-forest-light/40 rounded-2xl" />
-                <div className="absolute inset-0 flex items-center justify-center">
+                <Image
+                  src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=800&q=75&auto=format"
+                  alt="Nigerian agricultural commodities"
+                  fill
+                  className="object-cover"
+                  sizes="50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-forest/60 via-forest/20 to-transparent" />
+                <div className="absolute inset-0 flex items-end justify-start p-8">
                   <Image
                     src="/logo-icon.png"
                     alt="Herringbone"
-                    width={200}
-                    height={200}
-                    className="opacity-80"
+                    width={60}
+                    height={60}
+                    className="opacity-90"
                   />
                 </div>
               </div>
@@ -272,8 +288,13 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24 bg-forest text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-24 text-white overflow-hidden">
+        <SectionBackground
+          src={bgImages.homeWhyUs}
+          alt="Shipping containers"
+          overlay="bg-forest/85"
+        />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Why Herringbone"
             title="Built for International Buyers"
@@ -309,7 +330,7 @@ export default function HomePage() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="p-6 rounded-xl border border-forest-light hover:border-gold/30 transition-colors"
+                className="p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm hover:border-gold/30 transition-colors"
               >
                 <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center mb-4">
                   <svg className="w-5 h-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">

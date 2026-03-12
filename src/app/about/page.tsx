@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
+import HeroBackground from "@/components/HeroBackground";
+import { bgImages } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -53,7 +55,7 @@ export default function AboutPage() {
     <>
       {/* Hero */}
       <section className="relative bg-forest py-24 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(198,164,92,0.08),transparent_60%)]" />
+        <HeroBackground src={bgImages.aboutHero} alt="Nigerian agricultural farmland" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-gold/10 text-gold border border-gold/20 mb-6">
             About Us

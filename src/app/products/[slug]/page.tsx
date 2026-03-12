@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import CTASection from "@/components/CTASection";
+import HeroBackground from "@/components/HeroBackground";
 import { products } from "@/lib/products";
+import { bgImages } from "@/lib/images";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -32,7 +34,7 @@ export default async function ProductPage({ params }: Props) {
     <>
       {/* Hero */}
       <section className="relative bg-forest py-20 lg:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(198,164,92,0.08),transparent_60%)]" />
+        <HeroBackground src={bgImages.productDetail} alt="Agricultural commodity" overlay="darker" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
             <Link href="/products" className="hover:text-gold transition-colors">Products</Link>
