@@ -20,7 +20,6 @@
   --color-gray-800: #1F2937;
   --color-gray-900: #111827;
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 * {
@@ -34,50 +33,6 @@ body {
 }
 
 /* Custom animations */
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slide-in-right {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 0.6s ease-out forwards;
-}
-
-.animate-fade-in {
-  animation: fade-in 0.8s ease-out forwards;
-}
-
-.animate-slide-in-right {
-  animation: slide-in-right 0.6s ease-out forwards;
-}
-
-.animation-delay-200 { animation-delay: 0.2s; }
-.animation-delay-400 { animation-delay: 0.4s; }
-.animation-delay-600 { animation-delay: 0.6s; }
-
-/* Badge glow sweep — visible shimmer left to right */
 @keyframes badge-shimmer {
   0% {
     background-position: -200% center;
@@ -100,15 +55,6 @@ body {
   background-size: 200% 100%;
   background-position: -200% center;
   animation: badge-shimmer 1.8s ease-in-out 0.6s 1 forwards;
-}
-
-/* Gradient overlay for hero sections */
-.hero-gradient {
-  background: linear-gradient(135deg, rgba(15, 46, 37, 0.95) 0%, rgba(15, 46, 37, 0.8) 100%);
-}
-
-.gold-gradient {
-  background: linear-gradient(135deg, #C6A45C 0%, #D4B76E 50%, #C6A45C 100%);
 }
 
 /* Nav link underline-grow from center */

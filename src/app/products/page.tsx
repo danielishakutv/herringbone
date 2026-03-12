@@ -11,6 +11,18 @@ export const metadata: Metadata = {
   title: "Products",
   description:
     "Explore Herringbone's premium Nigerian agro commodities — cashew nuts, ginger, cocoa beans, sesame seeds, and hibiscus — ready for international export.",
+  openGraph: {
+    title: "Premium Nigerian Agro Commodities | Herringbone",
+    description:
+      "Explore Herringbone's premium Nigerian agro commodities — cashew nuts, ginger, cocoa beans, sesame seeds, and hibiscus — ready for international export.",
+    images: [{ url: "/logo-full.png", width: 1200, height: 630, alt: "Herringbone Products" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Premium Nigerian Agro Commodities | Herringbone",
+    images: ["/logo-full.png"],
+  },
+  alternates: { canonical: "/products" },
 };
 
 export default function ProductsPage() {

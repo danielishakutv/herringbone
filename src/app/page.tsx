@@ -8,6 +8,28 @@ import ScrollReveal from "@/components/ScrollReveal";
 import TiltImage from "@/components/TiltImage";
 import { products } from "@/lib/products";
 import { bgImages } from "@/lib/images";
+import siteConfig from "@/lib/siteConfig";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Herringbone",
+  url: siteConfig.url,
+  logo: `${siteConfig.url}/logo-full.png`,
+  description: siteConfig.description,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Lagos",
+    addressCountry: "NG",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+234-123-456-7890",
+    contactType: "sales",
+    email: "info@herringbone.com",
+  },
+  sameAs: [],
+};
 
 const services = [
   {
@@ -58,6 +80,10 @@ const stats = [
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center bg-forest overflow-hidden">
         <Image

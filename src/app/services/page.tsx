@@ -11,6 +11,13 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Herringbone offers end-to-end export services including trade facilitation, procurement support, logistics coordination, and market access partnerships.",
+  openGraph: {
+    title: "Export Services | Herringbone",
+    description:
+      "Herringbone offers end-to-end export services including trade facilitation, procurement support, logistics coordination, and market access partnerships.",
+    images: [{ url: "/logo-full.png", width: 1200, height: 630, alt: "Herringbone Services" }],
+  },
+  alternates: { canonical: "/services" },
 };
 
 const services = [

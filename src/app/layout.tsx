@@ -1,37 +1,85 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Geist } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import siteConfig from "@/lib/siteConfig";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+export const viewport: Viewport = {
+  themeColor: "#0F2E25",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Herringbone — Nigerian Agro Commodity Exports",
+    default: "Herringbone — Premium Nigerian Agro Commodity Exports",
     template: "%s | Herringbone",
   },
-  description:
-    "Herringbone is a trusted Nigerian agro commodity export company specializing in cashew, ginger, cocoa, sesame seeds, and hibiscus for international markets.",
+  description: siteConfig.description,
   keywords: [
     "Nigerian exports",
     "agro commodities",
-    "cashew",
-    "ginger",
-    "cocoa",
-    "sesame seeds",
-    "hibiscus",
+    "cashew nuts export",
+    "Nigerian ginger",
+    "cocoa beans Nigeria",
+    "sesame seeds export",
+    "hibiscus flowers",
     "Nigeria trade",
     "commodity sourcing",
+    "NEPC certified exporter",
+    "agricultural exports Africa",
   ],
+  authors: [{ name: "Herringbone" }],
+  creator: "Herringbone",
+  publisher: "Herringbone",
+  formatDetection: {
+    email: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: siteConfig.locale,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: "Herringbone — Premium Nigerian Agro Commodity Exports",
+    description: siteConfig.description,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Herringbone — Nigerian Agro Commodity Exports",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Herringbone — Premium Nigerian Agro Commodity Exports",
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: siteConfig.url,
+  },
 };
 
 export default function RootLayout({
@@ -42,7 +90,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} antialiased`}
       >
         <Header />
         <main className="pt-20">{children}</main>

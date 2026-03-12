@@ -10,6 +10,20 @@ export const metadata: Metadata = {
   title: "About Us",
   description:
     "Learn about Herringbone — a trusted Nigerian agro commodity export company committed to quality, reliability, and building lasting international trade partnerships.",
+  openGraph: {
+    title: "About Herringbone — Nigerian Agro Commodity Exports",
+    description:
+      "Learn about Herringbone — a trusted Nigerian agro commodity export company committed to quality, reliability, and building lasting international trade partnerships.",
+    images: [{ url: "/logo-full.png", width: 1200, height: 630, alt: "Herringbone" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Herringbone — Nigerian Agro Commodity Exports",
+    description:
+      "Learn about Herringbone — a trusted Nigerian agro commodity export company committed to quality, reliability, and building lasting international trade partnerships.",
+    images: ["/logo-full.png"],
+  },
+  alternates: { canonical: "/about" },
 };
 
 const values = [

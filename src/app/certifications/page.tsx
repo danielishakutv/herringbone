@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   title: "Certifications & Compliance",
   description:
     "Herringbone is NEPC certified and committed to full regulatory compliance for Nigerian agro commodity exports.",
+  openGraph: {
+    title: "Certifications & Compliance | Herringbone",
+    description:
+      "Herringbone is NEPC certified and committed to full regulatory compliance for Nigerian agro commodity exports.",
+    images: [{ url: "/logo-full.png", width: 1200, height: 630, alt: "Herringbone Certifications" }],
+  },
+  alternates: { canonical: "/certifications" },
 };
 
 export default function CertificationsPage() {

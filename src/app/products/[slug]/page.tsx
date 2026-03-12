@@ -5,6 +5,7 @@ import CTASection from "@/components/CTASection";
 import HeroBackground from "@/components/HeroBackground";
 import ScrollReveal from "@/components/ScrollReveal";
 import { products } from "@/lib/products";
+import siteConfig from "@/lib/siteConfig";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -21,6 +22,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: product.name,
     description: product.description.slice(0, 160),
+    openGraph: {
+      title: `${product.name} — Nigerian Export Grade | Herringbone`,
+      description: product.description.slice(0, 160),
+      images: [{ url: product.image, width: 800, height: 600, alt: product.name }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.name} — Nigerian Export Grade | Herringbone`,
+      description: product.description.slice(0, 160),
+      images: [product.image],
+    },
+    alternates: { canonical: `/products/${slug}` },
   };
 }
 
@@ -30,8 +43,37 @@ export default async function ProductPage({ params }: Props) {
 
   if (!product) notFound();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    image: `${siteConfig.url}${product.image}`,
+    brand: {
+      "@type": "Brand",
+      name: "Herringbone",
+    },
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      priceCurrency: "USD",
+      seller: {
+        "@type": "Organization",
+        name: "Herringbone",
+      },
+    },
+    countryOfOrigin: {
+      "@type": "Country",
+      name: "Nigeria",
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero */}
       <section className="relative bg-forest py-20 lg:py-28 overflow-hidden">
         <HeroBackground src={product.heroBg} alt={product.name} overlay="darker" />

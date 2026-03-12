@@ -19,7 +19,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-forest text-gray-300">
+    <footer className="bg-forest text-gray-300" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
@@ -41,7 +41,7 @@ export default function Footer() {
           </div>
 
           {/* Company Links */}
-          <div>
+          <nav aria-label="Company links">
             <h3 className="text-gold font-semibold text-sm uppercase tracking-wider mb-4">Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
@@ -52,10 +52,10 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Products Links */}
-          <div>
+          <nav aria-label="Products links">
             <h3 className="text-gold font-semibold text-sm uppercase tracking-wider mb-4">Products</h3>
             <ul className="space-y-3">
               {footerLinks.products.map((link) => (
@@ -66,7 +66,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Contact Info */}
           <div>
