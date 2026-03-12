@@ -4,7 +4,7 @@
 export const bgImages = {
   // Home hero — cargo port / shipping containers
   homeHero:
-    "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb19?w=1920&q=80&auto=format",
+    "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=1920&q=80&auto=format",
 
   // Home "Why Choose Us" — shipping containers aerial
   homeWhyUs:
@@ -24,7 +24,7 @@ export const bgImages = {
 
   // Services hero — container ship at sea
   servicesHero:
-    "https://images.unsplash.com/photo-1536697246787-1f7ae568714d?w=1920&q=80&auto=format",
+    "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?w=1920&q=80&auto=format",
 
   // Services process — warehouse logistics
   servicesProcess:
