@@ -40,7 +40,7 @@ export const bgImages = {
 
   // CTA section — container vessel in open waters
   cta:
-    "https://images.unsplash.com/photo-1559070169-a3077159ee16?w=1920&q=75&auto=format",
+    "https://images.unsplash.com/photo-1704110826560-cb9d3772c04c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 
   // Service detail images
   serviceTrade:
