@@ -41,4 +41,14 @@ export const bgImages = {
   // CTA section — aerial port view
   cta:
     "https://images.unsplash.com/photo-1567789884554-0b844b597180?w=1920&q=75&auto=format",
+
+  // Service detail images
+  serviceTrade:
+    "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80&auto=format",
+  serviceProcurement:
+    "https://images.unsplash.com/photo-1595246140625-573b715d11dc?w=800&q=80&auto=format",
+  serviceLogistics:
+    "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80&auto=format",
+  serviceMarket:
+    "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&auto=format",
 };

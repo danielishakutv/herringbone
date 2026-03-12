@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 import HeroBackground from "@/components/HeroBackground";
@@ -13,11 +14,8 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
+    image: bgImages.serviceTrade,
+    imageAlt: "Business professionals discussing trade agreements",
     title: "Trade Facilitation",
     description:
       "We connect international buyers with Nigerian suppliers, managing the complexities of cross-border commodity trade so you can focus on your business.",
@@ -29,11 +27,8 @@ const services = [
     ],
   },
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-      </svg>
-    ),
+    image: bgImages.serviceProcurement,
+    imageAlt: "Agricultural commodity sourcing and quality inspection",
     title: "Procurement Support",
     description:
       "We source high-quality agro commodities through our established network of trusted farmers, aggregators, and processing facilities across Nigeria.",
@@ -45,11 +40,8 @@ const services = [
     ],
   },
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-      </svg>
-    ),
+    image: bgImages.serviceLogistics,
+    imageAlt: "Container port and shipping logistics operations",
     title: "Logistics Coordination",
     description:
       "From warehousing to shipping, we coordinate the entire logistics chain to ensure your commodities arrive safely and on time.",
@@ -61,11 +53,8 @@ const services = [
     ],
   },
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-    ),
+    image: bgImages.serviceMarket,
+    imageAlt: "Team collaboration and market partnership meeting",
     title: "Market Access & Partnerships",
     description:
       "We help businesses expand into new markets by leveraging our trade expertise, regulatory knowledge, and international buyer network.",
@@ -108,9 +97,6 @@ export default function ServicesPage() {
               }`}
             >
               <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                <div className="w-16 h-16 rounded-2xl bg-gold/10 text-gold flex items-center justify-center mb-6">
-                  {service.icon}
-                </div>
                 <h2 className="text-3xl font-bold text-forest">{service.title}</h2>
                 <p className="mt-4 text-gray-500 leading-relaxed text-lg">{service.description}</p>
                 <ul className="mt-8 space-y-3">
@@ -127,10 +113,14 @@ export default function ServicesPage() {
                 </ul>
               </div>
               <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                <div className="bg-cream rounded-2xl p-12 flex items-center justify-center min-h-[300px]">
-                  <div className="w-24 h-24 rounded-2xl bg-forest/10 text-forest flex items-center justify-center">
-                    {service.icon}
-                  </div>
+                <div className="relative rounded-2xl overflow-hidden min-h-[350px] lg:min-h-[400px]">
+                  <Image
+                    src={service.image}
+                    alt={service.imageAlt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
                 </div>
               </div>
             </div>
@@ -140,7 +130,7 @@ export default function ServicesPage() {
 
       {/* Process */}
       <section className="relative py-24 bg-forest text-white overflow-hidden">
-        <SectionBackground src={bgImages.servicesProcess} alt="Warehouse logistics" overlay="darker" />
+        <SectionBackground src={bgImages.servicesProcess} alt="Warehouse logistics" overlay="bg-forest/90" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Our Process"
@@ -155,10 +145,10 @@ export default function ServicesPage() {
               { step: "03", title: "Documentation", desc: "We prepare all export documentation and compliance certificates." },
               { step: "04", title: "Delivery", desc: "Your commodities are shipped with full logistics coordination." },
             ].map((item) => (
-              <div key={item.step} className="relative p-6 rounded-xl border border-forest-light">
+              <div key={item.step} className="relative p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm">
                 <div className="text-4xl font-bold text-gold/20 mb-4">{item.step}</div>
-                <h3 className="text-lg font-bold">{item.title}</h3>
-                <p className="mt-2 text-sm text-gray-400 leading-relaxed">{item.desc}</p>
+                <h3 className="text-lg font-bold text-white">{item.title}</h3>
+                <p className="mt-2 text-sm text-gray-300 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
