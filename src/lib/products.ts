@@ -5,6 +5,7 @@ export interface Product {
   description: string;
   origin: string;
   image: string;
+  heroBg: string;
   color: string;
   specifications: { label: string; value: string }[];
   packaging: string[];
@@ -20,6 +21,7 @@ export const products: Product[] = [
       "Nigeria is one of Africa's largest producers of cashew nuts, renowned for their rich flavor and high kernel quality. Our cashew nuts are carefully sourced from trusted farming communities across Nigeria's cashew belt, ensuring consistent quality and supply for international buyers.",
     origin: "Nigeria (Oyo, Kwara, Kogi, Enugu, Anambra States)",
     image: "/products/cashew.jpg",
+    heroBg: "/products/cashew_bg.webp",
     color: "from-amber-600 to-amber-800",
     specifications: [
       { label: "Kernel Size", value: "W180, W210, W240, W320, W450" },
@@ -48,6 +50,7 @@ export const products: Product[] = [
       "Nigerian ginger is prized globally for its high oil content and pungent flavor, making it a preferred choice in spice markets worldwide. Our ginger is sourced from Kaduna State, the heart of Nigeria's ginger production, and processed to meet international quality requirements.",
     origin: "Nigeria (Kaduna, Nasarawa, Benue States)",
     image: "/products/ginger.jpg",
+    heroBg: "/products/ginger_bg.jpg",
     color: "from-yellow-600 to-yellow-800",
     specifications: [
       { label: "Variety", value: "UG1 (Yellow Ginger), UG2" },
@@ -76,6 +79,7 @@ export const products: Product[] = [
       "Nigeria is the world's fourth-largest cocoa producer, delivering beans with a distinct flavor profile sought after by chocolate manufacturers globally. Our cocoa beans are fermented and dried using best practices to ensure premium quality and are sourced from established cocoa farming regions.",
     origin: "Nigeria (Ondo, Cross River, Osun, Ogun States)",
     image: "/products/cocoa.jpg",
+    heroBg: "/products/cocoa_bg.webp",
     color: "from-amber-900 to-amber-950",
     specifications: [
       { label: "Grade", value: "Grade 1, Grade 2" },
@@ -103,6 +107,7 @@ export const products: Product[] = [
       "Nigeria ranks among the top global producers of sesame seeds, known for their high oil content and purity. Our sesame seeds are sourced from the northern regions of Nigeria, where ideal growing conditions produce seeds that meet the strictest international standards for food and oil processing.",
     origin: "Nigeria (Jigawa, Nassarawa, Benue, Taraba States)",
     image: "/products/sesame.jpg",
+    heroBg: "/products/sesame_bg.jpg",
     color: "from-yellow-500 to-amber-600",
     specifications: [
       { label: "Variety", value: "White, Brown, Black" },
@@ -131,6 +136,7 @@ export const products: Product[] = [
       "Nigerian hibiscus flowers (Roselle) are in high demand globally for beverages, herbal teas, natural food coloring, and health supplements. Our hibiscus is hand-picked and sun-dried to preserve its deep red color and rich nutritional profile, meeting the quality expectations of international buyers.",
     origin: "Nigeria (Jigawa, Kano, Bauchi, Gombe States)",
     image: "/products/hibiscus.jpg",
+    heroBg: "/products/Hibiscus_bg.png",
     color: "from-rose-600 to-rose-800",
     specifications: [
       { label: "Type", value: "Dried whole flowers, Cut & Sifted" },
