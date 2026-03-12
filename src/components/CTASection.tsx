@@ -42,7 +42,7 @@ export default function CTASection({
         </p>
         <Link
           href={buttonHref}
-          className={`inline-flex items-center gap-2 mt-8 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 ${
+          className={`btn-hover inline-flex items-center gap-2 mt-8 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 ${
             variant === "forest"
               ? "bg-gold text-forest hover:bg-gold-light"
               : "bg-forest text-gold hover:bg-forest-light"

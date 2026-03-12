@@ -3,6 +3,7 @@ import Image from "next/image";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 import HeroBackground from "@/components/HeroBackground";
+import ScrollReveal from "@/components/ScrollReveal";
 import { bgImages } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -73,7 +74,7 @@ export default function AboutPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <ScrollReveal direction="left">
               <SectionHeading
                 badge="Our Story"
                 title="Built on Trust, Driven by Quality"
@@ -90,8 +91,8 @@ export default function AboutPage() {
                   From our base in Lagos, we work closely with farming communities, aggregators, and processing facilities across Nigeria to source the finest cashew nuts, ginger, cocoa beans, sesame seeds, and hibiscus flowers for export to markets worldwide.
                 </p>
               </div>
-            </div>
-            <div className="relative">
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={200}>
               <div className="bg-forest rounded-2xl p-12 flex flex-col items-center justify-center min-h-[400px] gap-6">
                 <Image
                   src="/logo-icon.png"
@@ -102,7 +103,7 @@ export default function AboutPage() {
                 />
                 <span className="text-3xl font-bold text-white tracking-[0.25em] uppercase">Herringbone</span>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -111,6 +112,7 @@ export default function AboutPage() {
       <section className="py-24 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
+            <ScrollReveal direction="left">
             <div className="bg-white rounded-2xl p-10 shadow-sm border border-gray-100">
               <div className="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center mb-6">
                 <svg className="w-7 h-7 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -123,6 +125,8 @@ export default function AboutPage() {
                 To deliver premium-quality Nigerian agro commodities to international markets with integrity, efficiency, and consistency — building lasting partnerships that benefit buyers, suppliers, and communities alike.
               </p>
             </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={150}>
             <div className="bg-white rounded-2xl p-10 shadow-sm border border-gray-100">
               <div className="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center mb-6">
                 <svg className="w-7 h-7 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -134,6 +138,7 @@ export default function AboutPage() {
                 To become a leading name in Nigerian agro commodity exports, recognized globally for our commitment to quality, reliability, and sustainable trade practices that showcase the best of Nigeria&apos;s agricultural sector.
               </p>
             </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -147,9 +152,9 @@ export default function AboutPage() {
             description="Our values shape every decision we make and every relationship we build."
           />
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value) => (
+            {values.map((value, i) => (
+              <ScrollReveal key={value.title} delay={i * 100}>
               <div
-                key={value.title}
                 className="text-center p-8 rounded-2xl border border-gray-100 hover:border-gold/30 hover:shadow-lg transition-all duration-300"
               >
                 <div className="w-14 h-14 rounded-xl bg-forest/5 text-forest flex items-center justify-center mx-auto">
@@ -158,6 +163,7 @@ export default function AboutPage() {
                 <h3 className="mt-6 text-lg font-bold text-forest">{value.title}</h3>
                 <p className="mt-3 text-sm text-gray-500 leading-relaxed">{value.description}</p>
               </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -186,8 +192,9 @@ export default function AboutPage() {
                 title: "Deliver with Reliability",
                 description: "From documentation to logistics, we manage the entire export process to ensure timely delivery. Our buyers count on us to deliver — and we do.",
               },
-            ].map((item) => (
-              <div key={item.title} className="p-8 rounded-xl border border-forest-light">
+            ].map((item, i) => (
+              <ScrollReveal key={item.title} delay={i * 120}>
+              <div className="p-8 rounded-xl border border-forest-light">
                 <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center mb-6">
                   <svg className="w-5 h-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -196,6 +203,7 @@ export default function AboutPage() {
                 <h3 className="text-xl font-bold">{item.title}</h3>
                 <p className="mt-3 text-gray-400 leading-relaxed">{item.description}</p>
               </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

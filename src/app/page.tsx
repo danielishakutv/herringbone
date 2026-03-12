@@ -4,6 +4,7 @@ import ProductCard from "@/components/ProductCard";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 import SectionBackground from "@/components/SectionBackground";
+import ScrollReveal from "@/components/ScrollReveal";
 import { products } from "@/lib/products";
 import { bgImages } from "@/lib/images";
 
@@ -86,7 +87,7 @@ export default function HomePage() {
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/products"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gold text-forest font-semibold rounded-xl hover:bg-gold-light transition-all duration-200 text-lg"
+                  className="btn-hover inline-flex items-center justify-center gap-2 px-8 py-4 bg-gold text-forest font-semibold rounded-xl hover:bg-gold-light transition-all duration-200 text-lg"
                 >
                   Explore Products
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -95,7 +96,7 @@ export default function HomePage() {
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-gold/30 text-gold font-semibold rounded-xl hover:border-gold hover:bg-gold/5 transition-all duration-200 text-lg"
+                  className="btn-hover inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-gold/30 text-gold font-semibold rounded-xl hover:border-gold hover:bg-gold/5 transition-all duration-200 text-lg"
                 >
                   Request a Quote
                 </Link>
@@ -140,7 +141,7 @@ export default function HomePage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <ScrollReveal direction="left">
               <SectionHeading
                 badge="About Herringbone"
                 title="Your Trusted Partner in Nigerian Exports"
@@ -161,8 +162,8 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
-            </div>
-            <div className="relative">
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={200}>
               <div className="bg-cream rounded-2xl p-8 lg:p-12">
                 <div className="grid grid-cols-2 gap-6">
                   {[
@@ -213,7 +214,7 @@ export default function HomePage() {
                   ))}
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -227,14 +228,15 @@ export default function HomePage() {
             description="We source and export Nigeria's finest agro commodities, meeting international quality standards for buyers worldwide."
           />
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product) => (
-              <ProductCard
-                key={product.slug}
-                name={product.name}
-                slug={product.slug}
-                tagline={product.tagline}
-                image={product.image}
-              />
+            {products.map((product, i) => (
+              <ScrollReveal key={product.slug} delay={i * 100}>
+                <ProductCard
+                  name={product.name}
+                  slug={product.slug}
+                  tagline={product.tagline}
+                  image={product.image}
+                />
+              </ScrollReveal>
             ))}
           </div>
           <div className="mt-12 text-center">
@@ -260,17 +262,18 @@ export default function HomePage() {
             description="From procurement to delivery, we handle every step of the export process so you can focus on your business."
           />
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="group p-8 rounded-2xl border border-gray-100 hover:border-gold/30 hover:shadow-lg transition-all duration-300 bg-white"
-              >
+            {services.map((service, i) => (
+              <ScrollReveal key={service.title} delay={i * 100}>
+                <div
+                  className="group p-8 rounded-2xl border border-gray-100 hover:border-gold/30 hover:shadow-lg transition-all duration-300 bg-white"
+                >
                 <div className="w-14 h-14 rounded-xl bg-forest/5 text-forest flex items-center justify-center group-hover:bg-gold/10 group-hover:text-gold transition-colors duration-300">
                   {service.icon}
                 </div>
                 <h3 className="mt-6 text-lg font-bold text-forest">{service.title}</h3>
                 <p className="mt-3 text-sm text-gray-500 leading-relaxed">{service.description}</p>
               </div>
+              </ScrollReveal>
             ))}
           </div>
           <div className="mt-12 text-center">
@@ -327,9 +330,9 @@ export default function HomePage() {
                 title: "Dedicated Support",
                 description: "A responsive team ready to support your procurement needs from inquiry to delivery.",
               },
-            ].map((item) => (
+            ].map((item, i) => (
+              <ScrollReveal key={item.title} delay={i * 80}>
               <div
-                key={item.title}
                 className="p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm hover:border-gold/30 transition-colors"
               >
                 <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center mb-4">
@@ -340,6 +343,7 @@ export default function HomePage() {
                 <h3 className="font-semibold text-lg">{item.title}</h3>
                 <p className="mt-2 text-sm text-gray-400 leading-relaxed">{item.description}</p>
               </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

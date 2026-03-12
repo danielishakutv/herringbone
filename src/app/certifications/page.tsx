@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 import HeroBackground from "@/components/HeroBackground";
+import ScrollReveal from "@/components/ScrollReveal";
 import { bgImages } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -33,7 +34,7 @@ export default function CertificationsPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <ScrollReveal direction="left">
               <SectionHeading
                 badge="Primary Certification"
                 title="NEPC — Nigerian Export Promotion Council"
@@ -64,8 +65,8 @@ export default function CertificationsPage() {
                   </div>
                 ))}
               </div>
-            </div>
-            <div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={200}>
               <div className="bg-forest rounded-2xl p-12 text-center">
                 <div className="w-24 h-24 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-8">
                   <svg className="w-12 h-12 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -78,7 +79,7 @@ export default function CertificationsPage() {
                   Official export license holder authorized for international commodity trade
                 </p>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -117,8 +118,9 @@ export default function CertificationsPage() {
                 title: "Packing List",
                 description: "Comprehensive list detailing packaging specifications and shipment contents.",
               },
-            ].map((doc) => (
-              <div key={doc.title} className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+            ].map((doc, i) => (
+              <ScrollReveal key={doc.title} delay={i * 80}>
+              <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
                 <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -127,6 +129,7 @@ export default function CertificationsPage() {
                 <h3 className="font-bold text-forest">{doc.title}</h3>
                 <p className="mt-2 text-sm text-gray-500 leading-relaxed">{doc.description}</p>
               </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

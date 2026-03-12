@@ -3,6 +3,7 @@ import ProductCard from "@/components/ProductCard";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 import HeroBackground from "@/components/HeroBackground";
+import ScrollReveal from "@/components/ScrollReveal";
 import { products } from "@/lib/products";
 import { bgImages } from "@/lib/images";
 
@@ -39,14 +40,15 @@ export default function ProductsPage() {
             description="Each commodity is carefully sourced, quality-tested, and prepared for export with full documentation and compliance."
           />
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product) => (
-              <ProductCard
-                key={product.slug}
-                name={product.name}
-                slug={product.slug}
-                tagline={product.tagline}
-                image={product.image}
-              />
+            {products.map((product, i) => (
+              <ScrollReveal key={product.slug} delay={i * 100}>
+                <ProductCard
+                  name={product.name}
+                  slug={product.slug}
+                  tagline={product.tagline}
+                  image={product.image}
+                />
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -66,8 +68,9 @@ export default function ProductsPage() {
               { title: "Full Documentation", desc: "Phytosanitary certs, Certificate of Origin, and more" },
               { title: "Custom Packaging", desc: "Flexible packaging options for your market needs" },
               { title: "Competitive Pricing", desc: "Direct sourcing ensures the best value" },
-            ].map((item) => (
-              <div key={item.title} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
+            ].map((item, i) => (
+              <ScrollReveal key={item.title} delay={i * 100}>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
                 <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center mx-auto mb-4">
                   <svg className="w-6 h-6 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -76,6 +79,7 @@ export default function ProductsPage() {
                 <h3 className="font-semibold text-forest">{item.title}</h3>
                 <p className="mt-2 text-sm text-gray-500">{item.desc}</p>
               </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

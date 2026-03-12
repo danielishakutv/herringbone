@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const navigation = [
@@ -16,10 +16,24 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-forest/95 backdrop-blur-sm border-b border-forest-light">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-forest/95 backdrop-blur-sm border-b border-forest-light shadow-lg shadow-black/10"
+          : "bg-transparent border-b border-transparent"
+      }`}
+    >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -40,9 +54,9 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
+                className={`nav-link px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
                   pathname === item.href
-                    ? "text-gold bg-forest-light"
+                    ? "text-gold bg-forest-light active"
                     : "text-gray-300 hover:text-gold hover:bg-forest-light/50"
                 }`}
               >
@@ -51,7 +65,7 @@ export default function Header() {
             ))}
             <Link
               href="/contact"
-              className="ml-4 px-5 py-2.5 bg-gold text-forest font-semibold text-sm rounded-lg hover:bg-gold-light transition-colors duration-200"
+              className="btn-hover ml-4 px-5 py-2.5 bg-gold text-forest font-semibold text-sm rounded-lg hover:bg-gold-light transition-colors duration-200"
             >
               Get a Quote
             </Link>

@@ -85,3 +85,41 @@ body {
 .gold-gradient {
   background: linear-gradient(135deg, #C6A45C 0%, #D4B76E 50%, #C6A45C 100%);
 }
+
+/* Nav link underline-grow from center */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-gold);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 60%;
+  left: 20%;
+}
+
+/* Button lift + glow on hover */
+.btn-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(198, 164, 92, 0.3);
+}
+
+/* Image zoom inside overflow-hidden containers */
+.img-zoom {
+  transition: transform 0.5s ease;
+}
+.group:hover .img-zoom,
+.img-zoom-wrap:hover .img-zoom {
+  transform: scale(1.05);
+}

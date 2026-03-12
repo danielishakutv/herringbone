@@ -4,6 +4,7 @@ import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 import HeroBackground from "@/components/HeroBackground";
 import SectionBackground from "@/components/SectionBackground";
+import ScrollReveal from "@/components/ScrollReveal";
 import { bgImages } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -90,8 +91,8 @@ export default function ServicesPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
           {services.map((service, index) => (
+            <ScrollReveal key={service.title} delay={0}>
             <div
-              key={service.title}
               className={`grid lg:grid-cols-2 gap-16 items-center ${
                 index % 2 === 1 ? "lg:flex-row-reverse" : ""
               }`}
@@ -113,17 +114,18 @@ export default function ServicesPage() {
                 </ul>
               </div>
               <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                <div className="relative rounded-2xl overflow-hidden min-h-[350px] lg:min-h-[400px]">
+                <div className="relative rounded-2xl overflow-hidden min-h-[350px] lg:min-h-[400px] img-zoom-wrap">
                   <Image
                     src={service.image}
                     alt={service.imageAlt}
                     fill
-                    className="object-cover"
+                    className="object-cover img-zoom"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
               </div>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
@@ -145,11 +147,13 @@ export default function ServicesPage() {
               { step: "03", title: "Documentation", desc: "We prepare all export documentation and compliance certificates." },
               { step: "04", title: "Delivery", desc: "Your commodities are shipped with full logistics coordination." },
             ].map((item) => (
-              <div key={item.step} className="relative p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm">
+              <ScrollReveal key={item.step} delay={(parseInt(item.step) - 1) * 120}>
+              <div className="relative p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm">
                 <div className="text-4xl font-bold text-gold/20 mb-4">{item.step}</div>
                 <h3 className="text-lg font-bold text-white">{item.title}</h3>
                 <p className="mt-2 text-sm text-gray-300 leading-relaxed">{item.desc}</p>
               </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

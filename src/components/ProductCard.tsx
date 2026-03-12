@@ -19,7 +19,7 @@ export default function ProductCard({ name, slug, tagline, image }: ProductCardP
           src={image}
           alt={name}
           fill
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          className="object-cover img-zoom"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-forest/40 to-transparent" />

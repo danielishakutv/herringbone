@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import CTASection from "@/components/CTASection";
 import HeroBackground from "@/components/HeroBackground";
+import ScrollReveal from "@/components/ScrollReveal";
 import { products } from "@/lib/products";
 
 interface Props {
@@ -52,7 +53,7 @@ export default async function ProductPage({ params }: Props) {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-forest font-semibold rounded-xl hover:bg-gold-light transition-colors text-lg"
+              className="btn-hover inline-flex items-center gap-2 px-8 py-4 bg-gold text-forest font-semibold rounded-xl hover:bg-gold-light transition-colors text-lg"
             >
               Request a Quote
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -74,7 +75,7 @@ export default async function ProductPage({ params }: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Specifications */}
-            <div className="lg:col-span-2">
+            <ScrollReveal className="lg:col-span-2" direction="left">
               <h2 className="text-2xl font-bold text-forest mb-8">Quality Specifications</h2>
               <div className="bg-cream rounded-2xl overflow-hidden">
                 <table className="w-full">
@@ -98,10 +99,10 @@ export default async function ProductPage({ params }: Props) {
                   </tbody>
                 </table>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* Sidebar */}
-            <div className="space-y-8">
+            <ScrollReveal className="space-y-8" direction="right" delay={200}>
               {/* Packaging */}
               <div className="bg-forest rounded-2xl p-8 text-white">
                 <h3 className="text-lg font-bold mb-4">Packaging Options</h3>
@@ -145,7 +146,7 @@ export default async function ProductPage({ params }: Props) {
                   Send Inquiry
                 </Link>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
