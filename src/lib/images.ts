@@ -38,9 +38,9 @@ export const bgImages = {
   contactHero:
     "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&q=80&auto=format",
 
-  // CTA section — aerial port view
+  // CTA section — container vessel in open waters
   cta:
-    "https://images.unsplash.com/photo-1567789884554-0b844b597180?w=1920&q=75&auto=format",
+    "https://images.unsplash.com/photo-1559070169-a3077159ee16?w=1920&q=75&auto=format",
 
   // Service detail images
   serviceTrade:
