@@ -295,7 +295,7 @@ export default function HomePage() {
         <SectionBackground
           src={bgImages.homeWhyUs}
           alt="Shipping containers"
-          overlay="bg-forest/85"
+          overlay="bg-forest/93"
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
