@@ -25,7 +25,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-6">
-              <Image src="/logo-icon.png" alt="Herringbone" width={40} height={40} className="w-10 h-10" />
+              <Image src="/herringbone/logo-icon.png" alt="Herringbone" width={40} height={40} className="w-10 h-10" />
               <span className="text-xl font-bold text-white tracking-[0.25em] uppercase">Herringbone</span>
             </Link>
             <p className="text-sm leading-relaxed text-gray-400 mb-6">

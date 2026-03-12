@@ -109,7 +109,7 @@ export default function AboutPage() {
             <ScrollReveal direction="right" delay={200}>
               <div className="bg-forest rounded-2xl p-12 flex flex-col items-center justify-center min-h-[400px] gap-6">
                 <Image
-                  src="/logo-icon.png"
+                  src="/herringbone/logo-icon.png"
                   alt="Herringbone"
                   width={120}
                   height={120}

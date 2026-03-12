@@ -138,7 +138,7 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-forest/60 via-forest/20 to-transparent" />
                 <div className="absolute inset-0 flex items-end justify-start p-8">
                   <Image
-                    src="/logo-icon.png"
+                    src="/herringbone/logo-icon.png"
                     alt="Herringbone"
                     width={60}
                     height={60}
