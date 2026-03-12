@@ -31,7 +31,7 @@ export default function Header() {
               height={44}
               className="w-11 h-11"
             />
-            <span className="hidden sm:block text-xl font-bold text-white tracking-wide">Herringbone</span>
+            <span className="hidden sm:block text-xl font-bold text-white tracking-[0.25em] uppercase">Herringbone</span>
           </Link>
 
           {/* Desktop Navigation */}

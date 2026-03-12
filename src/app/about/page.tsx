@@ -100,7 +100,7 @@ export default function AboutPage() {
                   height={120}
                   className="opacity-90"
                 />
-                <span className="text-3xl font-bold text-white tracking-wide">Herringbone</span>
+                <span className="text-3xl font-bold text-white tracking-[0.25em] uppercase">Herringbone</span>
               </div>
             </div>
           </div>
